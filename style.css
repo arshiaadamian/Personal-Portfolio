@@ -1,0 +1,43 @@
+body {
+padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 7%; /* Explicit height */
+}
+
+/* Color of the links BEFORE scroll */
+.navbar .nav-link,
+.navbar .navbar-toggler-icon,
+.navbar .navbar-brand {
+  color: #262626;
+}
+
+
+.navbar-brand {
+  font-size: unset;
+  height: 3.5rem;
+}
+
+.container{
+    max-width: 100%;
+    justify-content: center !important;
+}
+
+.resume{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 5%;
+}
+
+.resume-btn{
+    width: 38.3%;
+}
