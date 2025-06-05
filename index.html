@@ -10,6 +10,10 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <title>Arshia Adamian</title>
   </head>
   <body>
@@ -20,16 +24,16 @@
       <div class="container">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#!">Resume</a>
+            <a class="nav-link" href="#projects">Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#!">Projects</a>
+            <a class="nav-link" href="#skills-container">Skills</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#!">Experience</a>
+            <a class="nav-link" href="#experience">Experience</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#!">Education</a>
+            <a class="nav-link" href="#education">Education</a>
           </li>
         </ul>
       </div>
@@ -38,7 +42,7 @@
 
     <!-- resume preview -->
     <div class="resume">
-      <h3>Resume</h3>
+      <h3 class="resume-header">Resume</h3>
       <img src="images/resume-preview.png" title="Resume PDF" />
       <a class="btn btn-primary resume-btn" href="documents/resume.pdf" download
         >View Full PDF</a
@@ -47,9 +51,9 @@
     <!-- resume preview -->
 
     <!-- Projects -->
-    <div class="projects">
-      <h3>Projects</h3>
-      <div class="album py-5">
+    <div class="projects" id="projects">
+      <h3 class="projects-header">Projects</h3>
+      <div>
         <div class="container">
           <div class="row">
             <div class="col-md-4">
@@ -179,7 +183,7 @@
     <!--End of Projects -->
 
     <!-- Skills -->
-    <div>
+    <div id="skills-container">
       <h3 class="skills-header">skills</h3>
       <div class="skills">
         <div class="each-skill">
@@ -211,6 +215,10 @@
           <p>C++</p>
         </div>
         <div class="each-skill">
+          <img src="images/python.webp" alt="Python" />
+          <p>Python</p>
+        </div>
+        <div class="each-skill">
           <img src="images/git.png" alt="Git" />
           <p>Git</p>
         </div>
@@ -237,5 +245,135 @@
       </div>
     </div>
     <!-- end of skills-->
+
+    <!-- experience -->
+    <div class="experience-container" id="experience">
+      <h3 class="experience-header">Experience</h3>
+      <div class="experience">
+        <div class="job hd">
+          <div class="job-title">
+            <img src="images/homedepot.png" alt="The Home Depot" />
+            <h4>The Home Depot</h4>
+            <p>July 2022 - Present</p>
+          </div>
+          <p class="job-description">
+            During my time as a Sales Associate at The Home Depot, I gained
+            valuable experience in a high-paced retail environment that demanded
+            strong communication and multitasking skills. I assisted a diverse
+            range of customers with product selection and technical inquiries,
+            which helped me develop the ability to explain complex information
+            clearly and confidently — a skill I now apply to team collaboration
+            and client communication in software development. I also learned to
+            handle feedback professionally and solve issues efficiently, even
+            during peak hours. Working with a large, cross-functional team
+            taught me how to thrive in a collaborative environment, where
+            adaptability and time management were essential. Balancing multiple
+            responsibilities while staying organized became second nature, and I
+            consistently delivered excellent service under pressure. These
+            real-world skills have translated well into my tech projects, where
+            clear communication, teamwork, and the ability to remain calm and
+            focused are just as important as writing clean code.
+          </p>
+        </div>
+
+        <div class="job vv">
+          <div class="job-title">
+            <img src="images/valuevillage.jpeg" alt="Value Village" />
+            <h4>Value Village</h4>
+            <p>July 2020 - May 2022</p>
+          </div>
+          <p class="job-description">
+            During my time as a Sales Associate at Value Village, I worked in a
+            fast-paced, high-volume retail environment where accuracy and
+            attention to detail were essential. My main responsibilities
+            included sorting, tagging, and organizing inventory while
+            maintaining a clean and efficient workflow. I quickly adapted to
+            constant changes in inventory and team responsibilities, which
+            helped me develop flexibility and strong organizational skills that
+            I continue to apply in my technical projects today. I also
+            demonstrated initiative by identifying and improving workflow
+            inefficiencies, which contributed to smoother day-to-day operations.
+            Working directly with customers, I gained valuable problem-solving
+            experience by handling unique requests and resolving issues
+            independently. These experiences taught me how to think critically,
+            stay focused under pressure, and deliver consistent service — all
+            skills that continue to support my growth in both retail and tech
+            environments.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- end of experience -->
+
+    <!-- education -->
+    <div class="education-container" id="education">
+      <h3 class="education-header">Education</h3>
+      <div class="education">
+        <div class="school bcit">
+          <div class="school-title">
+            <img src="images/bcit.jpeg" alt="BCIT" />
+            <div class="major-title">
+              <h4>British Columbia Institute of Technology</h4>
+              <h6>Computer Systems Technology (CST)</h6>
+            </div>
+            <p>Jan 2025 - Present</p>
+          </div>
+          <p class="school-description">
+            Currently pursuing a diploma in Computer Systems Technology at BCIT
+            with a <strong>91% CGPA</strong>. Gained a strong foundation in
+            object-oriented programming, hands-on experience in web development
+            using various frameworks, and completed multiple team projects
+            resulting in fully functional applications.
+          </p>
+        </div>
+        <div class="school bcit">
+          <div class="school-title">
+            <img src="images/sfu.png" alt="BCIT" />
+            <div class="major-title">
+              <h4>Simon Fraser University</h4>
+              <h6>Environmental Sciences</h6>
+            </div>
+            <p>September 2022 - August 2025</p>
+          </div>
+          <p class="school-description">
+            Developed strong analytical and research skills while working with
+            data and presenting findings. Also improved academic writing and
+            time management through coursework and projects.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- end of education -->
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a
+            href="https://github.com/arshiaadamian"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/arshia-adamian-b028731b2/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="mailto:aadamian1@my.bcit.ca">
+            <i class="fas fa-envelope"></i> aadamian1@my.bcit.ca
+          </a>
+          <a href="tel:2368589008">
+            <i class="fas fa-phone"></i> (236) 858-9008
+          </a>
+        </div>
+        <div class="footer-copyright">
+          <p>&copy; Arshia Adamian. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
