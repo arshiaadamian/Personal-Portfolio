@@ -448,5 +448,173 @@ body {
   color: #bdc3c7;
   margin-top: 1rem;
 }
-
 /* end of footer */
+
+/* Responsive Styles */
+/* ===== Mobile Responsiveness (Under 700px) ===== */
+@media (max-width: 700px) {
+  /* Global Adjustments */
+  body {
+    font-size: 15px;
+  }
+
+  /* Navbar */
+  .navbar {
+    height: 3.5rem;
+  }
+
+  .navbar .nav-link {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  /* Resume Section */
+  .resume {
+    padding-top: 5rem;
+  }
+
+  .resume-header {
+    font-size: 1.6rem;
+  }
+
+  .resume-btn {
+    width: 90%;
+  }
+
+  /* Projects Section */
+  .projects-header {
+    margin-top: 3rem !important;
+    font-size: 1.6rem;
+  }
+
+  .card {
+    margin-bottom: 1.5rem;
+  }
+
+  .card-img-top {
+    height: 180px;
+  }
+
+  .btn-group .btn {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  /* Skills Section */
+  .skills-header {
+    font-size: 1.6rem;
+    margin-top: 3rem;
+  }
+
+  .skills {
+    width: 95%;
+    padding: 1.2rem;
+    gap: 1rem;
+  }
+
+  .each-skill {
+    width: 80px;
+    padding: 0.8rem 0.3rem;
+  }
+
+  .each-skill img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .each-skill p {
+    font-size: 0.8rem;
+  }
+
+  /* Experience & Education Sections */
+  .experience-header,
+  .education-header {
+    font-size: 1.6rem;
+    margin-top: 3rem;
+  }
+
+  .experience,
+  .education {
+    width: 95%;
+  }
+
+  .job-title,
+  .school-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .job-title img,
+  .school-title img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .job-title p,
+  .school-title p {
+    margin-left: 0;
+    align-self: flex-start;
+  }
+
+  .job,
+  .school {
+    padding: 1.2rem;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 2rem 0;
+    margin-top: 3rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== Smaller Mobile Devices (Under 400px) ===== */
+@media (max-width: 400px) {
+  /* Navbar */
+  .navbar .nav-link {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  /* Project Cards */
+  .card-img-top {
+    height: 150px;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+
+  /* Skills Grid */
+  .each-skill {
+    width: 70px;
+  }
+
+  .each-skill img {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Experience/Education */
+  .job-title img,
+  .school-title img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .job-description,
+  .school-description {
+    font-size: 0.9rem;
+  }
+}
