@@ -1,0 +1,146 @@
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 1vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 4rem;
+  /* Fixed pixel height works better than percentage */
+  z-index: 1000;
+  /* Ensure navbar stays above other content */
+  background-color: white;
+}
+
+/* Color of the links BEFORE scroll */
+.navbar .nav-link,
+.navbar .navbar-toggler-icon,
+.navbar .navbar-brand {
+  color: #262626;
+}
+
+.navbar-brand {
+  font-size: unset;
+  height: 3.5rem;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+  padding: 0 !important;
+}
+
+.home-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: black;
+}
+
+/* .description {
+  margin-top: 5rem;
+  margin-bottom: 0;
+  max-width: 80%;
+  border: 0.1rem solid black;
+  border-radius: 5%;
+}
+
+.description p {
+  margin: 0;
+  padding: 0.5rem;
+} */
+
+/* Add/modify these styles in your jac.css */
+
+/* Update your CSS with these styles */
+
+.description {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  width: 85%;
+  max-width: 900px;
+  padding: 2.5rem;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  line-height: 1.7;
+  transition: transform 0.3s ease;
+}
+
+.description p {
+  margin: 0 0 2rem 0;
+  padding: 0;
+  font-size: 1.1rem;
+  color: #333;
+  text-align: left;
+  hyphens: auto;
+}
+
+.tech-images {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.tech-images img {
+  max-width: 180px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  background: white;
+  padding: 12px;
+}
+
+.tech-images img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .description {
+    width: 90%;
+    padding: 2rem;
+  }
+
+  .tech-images {
+    gap: 1.5rem;
+  }
+
+  .tech-images img {
+    max-width: 140px;
+  }
+}
+
+@media (max-width: 576px) {
+  .description {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .tech-images {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .tech-images img {
+    max-width: 120px;
+  }
+}

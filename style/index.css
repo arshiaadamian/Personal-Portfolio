@@ -3,6 +3,8 @@ body {
   margin: 0;
   height: 100%;
   width: 100%;
+  /* display: flex;
+  flex-direction: column;  align-items: center; */
 }
 
 .navbar {
@@ -78,4 +80,44 @@ body {
 .projects h3 {
   text-align: center;
   margin-top: 10rem;
+}
+
+/* skills */
+.skills {
+  box-shadow: #262626 0px 0px 10px;
+  width: 80%;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem; /* adds space between skill items */
+  background-color: #fff; /* optional: makes it pop from the background */
+  border-radius: 8px;
+  justify-content: center;
+}
+
+.each-skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  text-align: center;
+  box-shadow: #262626 0px 0px 10px;
+  border-radius: 8px;
+}
+
+.each-skill img {
+  width: 95px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.each-skill p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.skills-header {
+  text-align: center;
 }
