@@ -451,8 +451,8 @@ body {
 /* end of footer */
 
 /* Responsive Styles */
-/* ===== Mobile Responsiveness (Under 700px) ===== */
-@media (max-width: 700px) {
+/* ===== Mobile Responsiveness (Under 750px) ===== */
+@media (max-width: 850px) {
   /* Global Adjustments */
   body {
     font-size: 15px;
@@ -561,8 +561,9 @@ body {
   .school {
     padding: 1.2rem;
   }
-
-  /* Footer */
+}
+/* Footer */
+@media (max-width: 700px) {
   .site-footer {
     padding: 2rem 0;
     margin-top: 3rem;
