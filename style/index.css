@@ -131,6 +131,17 @@ body {
   padding: 2rem;
 }
 
+.projects .container {
+  display: flex;
+  justify-content: center;
+}
+
+.projects .row {
+  justify-content: center;
+  max-width: 1500px; /* Adjust based on your preferred max width */
+  margin: 0 auto;
+}
+
 /* end of projects */
 
 /* skills */
