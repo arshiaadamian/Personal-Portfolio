@@ -22,7 +22,11 @@
       class="navbar navbar-expand fixed-top shadow-0 border-bottom border-dark"
     >
       <div class="container">
+        <a class="navbar-brand" href="#hero">Arshia Adamian</a>
         <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="#projects">Projects</a>
           </li>
@@ -35,20 +39,75 @@
           <li class="nav-item">
             <a class="nav-link" href="#education">Education</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
         </ul>
       </div>
     </nav>
     <!-- Navbar -->
 
-    <!-- resume preview -->
-    <div class="resume">
-      <h3 class="resume-header">Resume</h3>
-      <img src="images/resume.png" title="Resume PDF" />
-      <a class="btn btn-primary resume-btn" href="documents/resume.pdf" download
-        >View Full PDF</a
-      >
-    </div>
-    <!-- resume preview -->
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">Hi, I'm <span class="highlight">Arshia Adamian</span></h1>
+          <h2 class="hero-subtitle">Computer Systems Technology Student & Aspiring Software Developer</h2>
+          <p class="hero-description">
+            Passionate about creating innovative web applications and solving complex problems through code. 
+            Currently pursuing Computer Systems Technology at BCIT with a 91% CGPA, bringing creativity 
+            and analytical thinking to every project.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary hero-btn">View My Work</a>
+            <a href="documents/resume.pdf" class="btn btn-outline-primary hero-btn" target="_blank">
+              <i class="fas fa-download"></i> Download Resume
+            </a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="image-placeholder">
+            <i class="fas fa-user-circle"></i>
+            <p>Personal Photo<br><small>Space reserved for your photo</small></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <h3 class="section-header">About Me</h3>
+        <div class="about-content">
+          <p class="about-text">
+            I'm a dedicated Computer Systems Technology student at BCIT with a passion for full-stack development 
+            and problem-solving. My journey in technology has been driven by curiosity and a desire to create 
+            meaningful applications that make a difference. With experience in various programming languages and 
+            frameworks, I enjoy tackling challenges and continuously learning new technologies.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <i class="fas fa-graduation-cap"></i>
+              <h4>Education</h4>
+              <p>91% CGPA in Computer Systems Technology at BCIT</p>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-code"></i>
+              <h4>Development</h4>
+              <p>Full-stack web development with modern frameworks</p>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-lightbulb"></i>
+              <h4>Innovation</h4>
+              <p>Creating solutions that combine functionality with great UX</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End About Section -->
+
 
     <!-- Projects -->
     <div class="projects" id="projects">
@@ -353,6 +412,78 @@
       </div>
     </div>
     <!-- end of education -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume-section">
+      <div class="container">
+        <h3 class="section-header">Resume</h3>
+        <div class="resume-content">
+          <div class="resume-preview">
+            <img src="images/resume.png" title="Resume PDF" alt="Resume Preview" />
+          </div>
+          <div class="resume-actions">
+            <a class="btn btn-primary resume-btn" href="documents/resume.pdf" target="_blank">
+              <i class="fas fa-eye"></i> View Resume
+            </a>
+            <a class="btn btn-outline-primary resume-btn" href="documents/resume.pdf" download>
+              <i class="fas fa-download"></i> Download PDF
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Resume Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h3 class="section-header">Get In Touch</h3>
+        <div class="contact-content">
+          <div class="contact-intro">
+            <p>I'm always interested in new opportunities and collaborations. Feel free to reach out!</p>
+          </div>
+          <div class="contact-methods">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-info">
+                <h4>Email</h4>
+                <a href="mailto:aadamian1@my.bcit.ca">aadamian1@my.bcit.ca</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-info">
+                <h4>Phone</h4>
+                <a href="tel:2368589008">(236) 858-9008</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-linkedin"></i>
+              </div>
+              <div class="contact-info">
+                <h4>LinkedIn</h4>
+                <a href="https://www.linkedin.com/in/arshia-adamian-b028731b2/" target="_blank">Connect with me</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-github"></i>
+              </div>
+              <div class="contact-info">
+                <h4>GitHub</h4>
+                <a href="https://github.com/arshiaadamian" target="_blank">View my repositories</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Contact Section -->
 
     <!-- Footer -->
     <footer class="site-footer">
