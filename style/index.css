@@ -866,6 +866,10 @@ body {
     height: 200px;
   }
 
+  .image-placeholder i {
+    font-size: 3rem;
+  }
+
   /* About Section */
   .about-highlights {
     grid-template-columns: 1fr;
@@ -987,6 +991,27 @@ body {
   }
 }
 
+/* ===== Medium screens (Under 992px) ===== */
+@media (max-width: 991.98px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+
 /* ===== Small Mobile Devices (Under 480px) ===== */
 @media (max-width: 480px) {
   /* Global */
@@ -1007,6 +1032,11 @@ body {
   /* Hero Section */
   .hero-section {
     padding: 4rem 1rem 2rem;
+    min-height: 90vh;
+  }
+
+  .hero-content {
+    gap: 1.5rem;
   }
 
   .hero-title {
@@ -1017,14 +1047,21 @@ body {
     font-size: 1.1rem;
   }
 
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
   .hero-buttons {
     flex-direction: column;
     width: 100%;
+    gap: 0.8rem;
   }
 
   .hero-btn {
     width: 100%;
     justify-content: center;
+    padding: 10px 24px;
+    font-size: 1rem;
   }
 
   .image-placeholder {
@@ -1033,7 +1070,11 @@ body {
   }
 
   .image-placeholder i {
-    font-size: 3rem;
+    font-size: 2.5rem;
+  }
+
+  .image-placeholder p {
+    font-size: 0.8rem;
   }
 
   /* Section Headers */
