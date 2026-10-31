@@ -1,596 +1,459 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style/index.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Arshia Adamian | Software Developer</title>
+    <meta
+      name="description"
+      content="Arshia Adamian is a software developer who builds and ships real products, from serverless AWS backends to iOS apps and Chrome extensions."
+    />
+    <meta name="author" content="Arshia Adamian" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b0b0d" media="(prefers-color-scheme: dark)" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Arshia Adamian | Software Developer" />
+    <meta
+      property="og:description"
+      content="I build and ship real products, from serverless AWS backends to iOS apps and Chrome extensions."
+    />
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&display=swap"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <title>Arshia Adamian</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script>document.documentElement.classList.add("js");</script>
+    <script src="main.js" defer></script>
   </head>
+
   <body>
-    <!-- Navbar -->
-    <nav
-      class="navbar navbar-expand-lg navbar-light fixed-top border-bottom border-dark"
-    >
-      <div class="container">
-        <a class="navbar-brand" href="#hero">Arshia Adamian</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
+    <!-- Icon sprite -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="i-github" viewBox="0 0 16 16">
+        <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+      </symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5" /><path d="m4 7.5 8 5.5 8-5.5" /></g>
+      </symbol>
+      <symbol id="i-file" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" /><path d="M14 3v5h5M9 13h6M9 17h4" /></g>
+      </symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M8.5 7H17v8.5" />
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5" />
+      </symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2" /><path d="M5 15V6a2 2 0 0 1 2-2h9" /></g>
+      </symbol>
+    </svg>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav container" aria-label="Primary">
+        <a class="nav__brand" href="#top" aria-label="Arshia Adamian, back to top">
+          <span class="nav__mark" aria-hidden="true">AA</span>
+          <span class="nav__name">Arshia Adamian</span>
+        </a>
+        <ul class="nav__links">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- ============ Hero ============ -->
+      <section class="hero container" id="top" aria-labelledby="hero-title">
+        <div class="hero__text">
+          <h1 class="hero__title" id="hero-title" data-reveal>
+            <span>Arshia Adamian</span>
+            <span class="hero__role">Software Developer</span>
+          </h1>
+          <p class="hero__lede" data-reveal style="--d: 1">
+            I build and ship real products, from serverless AWS backends to iOS
+            apps and Chrome extensions.
+          </p>
+          <ul class="hero__links" data-reveal style="--d: 2">
+            <li>
+              <!-- Resume: replace documents/resume.pdf with your latest copy, or change this path -->
+              <a class="btn btn--solid" href="documents/resume.pdf" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-file" /></svg>
+                Resume
+              </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#projects">Projects</a>
+            <li>
+              <a class="btn" href="https://github.com/arshiaadamian" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg>
+                GitHub
+              </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#skills-container">Skills</a>
+            <li>
+              <a class="btn" href="https://www.linkedin.com/in/arshia-adamian" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-linkedin" /></svg>
+                LinkedIn
+              </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#experience">Experience</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#education">Education</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
+            <li>
+              <a class="btn" href="mailto:adamianarshia@gmail.com">
+                <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>
+                Email
+              </a>
             </li>
           </ul>
         </div>
-      </div>
-    </nav>
-    <!-- Navbar -->
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1 class="hero-title">
-            Hi, I'm <span class="highlight">Arshia Adamian</span>
-          </h1>
-          <h2 class="hero-subtitle">
-            Computer Systems Technology Student & Aspiring Software Developer
-          </h2>
-          <p class="hero-description">
-            Passionate about creating innovative web applications and solving
-            complex problems through code. Currently pursuing Computer Systems
-            Technology at BCIT with a 91% CGPA, bringing creativity and
-            analytical thinking to every project.
-          </p>
-          <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary hero-btn"
-              >View My Work</a
-            >
-            <a
-              href="documents/resume.pdf"
-              class="btn btn-outline-primary hero-btn"
-              target="_blank"
-            >
-              <i class="fas fa-download"></i> Download Resume
-            </a>
-          </div>
-        </div>
-        <div class="hero-image">
+        <figure class="hero__portrait" data-reveal style="--d: 1">
           <img
-            src="images/profile.jpg"
-            alt="Arshia Adamian"
-            class="profile-image"
+            src="assets/arshia.jpg"
+            width="750"
+            height="1000"
+            alt="Portrait of Arshia Adamian sitting on a wooden bench by the water at night"
+            fetchpriority="high"
+            decoding="async"
           />
-        </div>
-      </div>
-    </section>
-    <!-- End Hero Section -->
+        </figure>
+      </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-      <div class="container">
-        <h3 class="section-header">About Me</h3>
-        <div class="about-content">
-          <p class="about-text">
-            I'm a dedicated Computer Systems Technology student at BCIT with a
-            passion for full-stack development and problem-solving. My journey
-            in technology has been driven by curiosity and a desire to create
-            meaningful applications that make a difference. With experience in
-            various programming languages and frameworks, I enjoy tackling
-            challenges and continuously learning new technologies.
-          </p>
-          <div class="about-highlights">
-            <div class="highlight-item">
-              <i class="fas fa-graduation-cap"></i>
-              <h4>Education</h4>
-              <p>91% CGPA in Computer Systems Technology at BCIT</p>
-            </div>
-            <div class="highlight-item">
-              <i class="fas fa-code"></i>
-              <h4>Development</h4>
-              <p>Full-stack web development with modern frameworks</p>
-            </div>
-            <div class="highlight-item">
-              <i class="fas fa-lightbulb"></i>
-              <h4>Innovation</h4>
-              <p>Creating solutions that combine functionality with great UX</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End About Section -->
+      <!-- ============ Projects ============ -->
+      <section class="section container" id="work" aria-labelledby="work-title">
+        <header class="section__head section__head--wide" data-reveal>
+          <p class="eyebrow"><span>01</span> Selected work</p>
+          <h2 class="section__title" id="work-title">Projects</h2>
+        </header>
 
-    <!-- Projects -->
-    <div class="projects" id="projects">
-      <h3 class="projects-header">Projects</h3>
-      <div>
-        <div class="container">
-          <div class="row">
-            <!-- Hackathon -->
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                  alt="Thumbnail [100%x225]"
-                  src="images/tracklift.png"
-                  data-holder-rendered="true"
-                  style="height: 225px; width: 100%; display: block"
-                />
-                <div class="card-body">
-                  <p class="card-text">
-                    Created an app called <b>TrackLift</b>, designed for gym
-                    users to track their workout plans and build personalized
-                    workout plans.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div class="btn-group">
-                      <a
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                        href="https://tracklift-fullstack.onrender.com/"
-                        target="_blank"
-                      >
-                        View
-                      </a>
-                      <a
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                        href="projects/trackLift.html"
-                      >
-                        Tech used
-                      </a>
-                    </div>
-                  </div>
+        <div class="projects">
+          <!-- DailyByte (featured) -->
+          <article class="project project--featured" data-reveal>
+            <div class="project__body">
+              <div class="project__head">
+                <img class="project__logo" src="assets/dailybyte.jpg" width="256" height="256" alt="" loading="lazy" decoding="async" />
+                <div>
+                  <h3 class="project__name">DailyByte</h3>
+                  <!-- Status: when approved, change data-status to "live" and the text to "Live on the App Store" -->
+                  <p class="badge" data-status="review">In App Store review</p>
                 </div>
               </div>
+              <p class="project__tagline">A notification-first iOS learning app.</p>
+              <p class="project__desc">
+                Pick a topic and a time, and get short AI-generated "bytes" of
+                knowledge delivered as push notifications. Built solo with a React
+                Native frontend and a fully serverless AWS backend, with per-user
+                timezone-aware scheduling and sign in with Apple and Google.
+              </p>
+              <ul class="stack" aria-label="Tech stack">
+                <li>React Native</li><li>Expo</li><li>AWS Lambda</li><li>API Gateway</li><li>DynamoDB</li><li>Cognito</li><li>EventBridge Scheduler</li><li>Amazon Bedrock</li>
+              </ul>
+              <!-- App Store link: paste it into href="" below. The button stays hidden while href is empty. -->
+              <a class="project__link" href="" target="_blank" rel="noopener">
+                View on the App Store
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+              </a>
             </div>
+            <div class="stage stage--dailybyte" aria-hidden="true">
+              <div class="phones">
+                <img src="assets/dailybyte-7.jpg" width="416" height="900" alt="" loading="lazy" decoding="async" />
+                <img src="assets/dailybyte-6.jpg" width="416" height="900" alt="" loading="lazy" decoding="async" />
+                <img src="assets/dailybyte-10.jpg" width="416" height="900" alt="" loading="lazy" decoding="async" />
+              </div>
+              <img class="daisy" src="assets/daisy-peek.png" width="440" height="293" alt="" loading="lazy" decoding="async" />
+            </div>
+          </article>
 
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                  alt="Thumbnail [100%x225]"
-                  src="images/BCITConnect.png"
-                  data-holder-rendered="true"
-                  style="height: 225px; width: 100%; display: block"
-                />
-                <div class="card-body">
-                  <p class="card-text">
-                    This is my group project called <b>BCIT Connect</b>, a web
-                    app that is used to connect BCIT students with BCIT alumni
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div class="btn-group">
-                      <a
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                        href="https://two800-202510-bby11-2.onrender.com"
-                        target="_blank"
-                      >
-                        View
-                      </a>
-                      <a
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                        href="projects/BCITConnect.html"
-                      >
-                        Tech used
-                      </a>
-                    </div>
-                  </div>
+          <!-- Progress: Lift Log -->
+          <article class="project" data-reveal>
+            <div class="stage stage--progress" aria-hidden="true">
+              <div class="phones phones--rise">
+                <img src="assets/progress-calendar.jpg" width="414" height="900" alt="" loading="lazy" decoding="async" />
+                <img src="assets/progress-today.jpg" width="414" height="900" alt="" loading="lazy" decoding="async" />
+                <img src="assets/progress-history.jpg" width="414" height="900" alt="" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <div class="project__body">
+              <div class="project__head">
+                <img class="project__logo" src="assets/progress.png" width="256" height="256" alt="" loading="lazy" decoding="async" />
+                <div>
+                  <h3 class="project__name">Progress: Lift Log</h3>
+                  <p class="badge" data-status="live">Live on the App Store</p>
                 </div>
               </div>
+              <p class="project__tagline">A personal workout tracker for logging lifts and progress.</p>
+              <p class="project__desc">
+                <!-- Add one or two sentences on what it does here, before the next sentence. -->
+                Designed and shipped to the App Store.
+              </p>
+              <ul class="stack" aria-label="Tech stack">
+                <li>Swift</li><li>Claude Code</li>
+              </ul>
+              <a class="project__link" href="https://apps.apple.com/ca/app/progress-lift-log/id6824033352" target="_blank" rel="noopener">
+                View on the App Store
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+              </a>
             </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                  alt="Thumbnail [100%x225]"
-                  src="images/friender.png"
-                  data-holder-rendered="true"
-                  style="height: 225px; width: 100%; display: block"
-                />
-                <div class="card-body">
-                  <p class="card-text">
-                    <b>Friender</b> is an AI-powered social matching app that
-                    helps people form real-world friendships through shared
-                    activities — not endless texting or swiping. It's built for
-                    people who want to genuinely connect with others in their
-                    city and actually go do things together.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div class="btn-group">
-                      <a
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                        href="https://rainbow-queijadas-62febd.netlify.app/"
-                        target="_blank"
-                      >
-                        View
-                      </a>
-                      <a
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                        href="projects/Friender.html"
-                      >
-                        Tech used
-                      </a>
-                    </div>
-                  </div>
+          </article>
+
+          <!-- Flowdeck -->
+          <article class="project" data-reveal style="--d: 1">
+            <div class="stage stage--flowdeck" aria-hidden="true">
+              <img class="stage__window stage__window--right" src="assets/flowdeck-shot.jpg" width="1200" height="656" alt="" loading="lazy" decoding="async" />
+            </div>
+            <div class="project__body">
+              <div class="project__head">
+                <img class="project__logo project__logo--plain" src="assets/flowdeck.png" width="243" height="256" alt="" loading="lazy" decoding="async" />
+                <div>
+                  <h3 class="project__name">Flowdeck</h3>
+                  <p class="badge" data-status="live">Live on the Chrome Web Store</p>
                 </div>
               </div>
+              <p class="project__tagline">A Chrome extension that calculates BCIT students' grades automatically.</p>
+              <p class="project__desc">
+                Scrapes grades from the BCIT Learning Hub, reads official course
+                outlines with an AI model to extract grade weights, and shows
+                students exactly where they stand. Built solo, with a two-layer
+                caching system that makes repeat loads near instant. Used by 25
+                students.
+              </p>
+              <ul class="stack" aria-label="Tech stack">
+                <li>JavaScript</li><li>Chrome Extension (Manifest V3)</li><li>Node.js</li><li>Express</li><li>Groq API (Llama 3.3 70B)</li>
+              </ul>
+              <a class="project__link" href="https://chromewebstore.google.com/detail/gajhlggjhlnijffakcciphpaiepbmpkd" target="_blank" rel="noopener">
+                View on the Chrome Web Store
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+              </a>
             </div>
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                  alt="Thumbnail [100%x225]"
-                  src="images/JAC.png"
-                  data-holder-rendered="true"
-                  style="height: 225px; width: 100%; display: block"
-                />
-                <div class="card-body">
-                  <p class="card-text">
-                    This is my group project called <b>JAC</b>, a web app that
-                    is used to connect gamers together based on their
-                    preferences.
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div class="btn-group">
-                      <a
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                        href="https://jac-app-2c28c.web.app/"
-                        target="_blank"
-                      >
-                        View
-                      </a>
-                      <a
-                        type="button"
-                        class="btn btn-sm btn-outline-secondary"
-                        href="projects/jac.html"
-                      >
-                        Tech used
-                      </a>
-                    </div>
-                  </div>
+          </article>
+
+          <!-- BCIT Connect -->
+          <article class="project" data-reveal>
+            <div class="stage stage--bcitconnect" aria-hidden="true">
+              <img class="stage__window" src="assets/bcitconnect-shot.jpg" width="1200" height="772" alt="" loading="lazy" decoding="async" />
+            </div>
+            <div class="project__body">
+              <div class="project__head">
+                <span class="project__logo project__logo--mark mark--bcitconnect" aria-hidden="true">BC</span>
+                <div>
+                  <h3 class="project__name">BCIT Connect</h3>
+                  <p class="badge" data-status="team">Team project, BCIT</p>
                 </div>
               </div>
+              <p class="project__tagline">An AI-matched mentorship platform for students and alumni.</p>
+              <p class="project__desc">
+                Led backend development on a team of five, building AI-driven
+                matching between students and alumni using OpenAI embeddings.
+                Graded A+ by BCIT faculty.
+              </p>
+              <ul class="stack" aria-label="Tech stack">
+                <li>JavaScript</li><li>Node.js</li><li>MongoDB</li><li>EJS</li><li>Bootstrap</li><li>OpenAI API</li>
+              </ul>
+              <!-- Repo or site link: paste it into href="" below. The button stays hidden while href is empty. -->
+              <a class="project__link" href="" target="_blank" rel="noopener">
+                View project
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+              </a>
             </div>
+          </article>
+
+          <!-- JAC -->
+          <article class="project" data-reveal style="--d: 1">
+            <div class="stage stage--jac" aria-hidden="true">
+              <img class="stage__phone" src="assets/jac-shot.jpg" width="681" height="860" alt="" loading="lazy" decoding="async" />
+            </div>
+            <div class="project__body">
+              <div class="project__head">
+                <span class="project__logo project__logo--mark mark--jac" aria-hidden="true">JAC</span>
+                <div>
+                  <h3 class="project__name">JAC</h3>
+                  <p class="badge" data-status="team">Team project</p>
+                </div>
+              </div>
+              <p class="project__tagline">A gamer matchmaking web app.</p>
+              <p class="project__desc">
+                Built with a team of three to connect gamers based on shared
+                interests and playstyle preferences. A custom matching algorithm
+                recommends friends and communities, with profiles, friend
+                management, real-time messaging, and community groups.
+              </p>
+              <ul class="stack" aria-label="Tech stack">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Firebase Firestore</li>
+              </ul>
+              <!-- Repo or site link: paste it into href="" below. The button stays hidden while href is empty. -->
+              <a class="project__link" href="" target="_blank" rel="noopener">
+                View project
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ Experience ============ -->
+      <section class="section section--split container" id="experience" aria-labelledby="experience-title">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow"><span>02</span> Where I've worked</p>
+          <h2 class="section__title" id="experience-title">Experience</h2>
+        </header>
+
+        <ol class="timeline">
+          <li class="entry" data-reveal>
+            <p class="entry__date">Jan 2026 to Aug 2026</p>
+            <div>
+              <div class="entry__head">
+                <span class="entry__logo"><img src="assets/reva.png" width="240" height="72" alt="Reva Solutions logo" loading="lazy" decoding="async" /></span>
+                <div>
+                  <h3 class="entry__role">Software Developer</h3>
+                  <p class="entry__org">Reva Solutions</p>
+                </div>
+              </div>
+              <ul class="entry__points">
+                <li>Built and deployed an AI-powered automation tool with custom LLM logic and MCP tools</li>
+                <li>Designed and implemented REST API integrations across multiple enterprise systems</li>
+                <li>Delivered a full integration end to end, shipped to production</li>
+                <li>Diagnosed and fixed broken legacy components across existing pipelines</li>
+                <li>Worked in an Agile team with stand-ups, sprint planning, and code reviews</li>
+              </ul>
+            </div>
+          </li>
+          <li class="entry" data-reveal>
+            <p class="entry__date">Sep 2026 to Present</p>
+            <div>
+              <div class="entry__head">
+                <span class="entry__logo entry__logo--fill"><img src="assets/bcit.jpeg" width="225" height="224" alt="BCIT logo" loading="lazy" decoding="async" /></span>
+                <div>
+                  <h3 class="entry__role">Peer Tutor</h3>
+                  <p class="entry__org">BCIT Learning Commons</p>
+                </div>
+              </div>
+              <ul class="entry__points">
+                <li>Tutor BCIT students in object-oriented programming and math, explaining core concepts and helping them debug their own code</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ============ Education ============ -->
+      <section class="section section--split container" id="education" aria-labelledby="education-title">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow"><span>03</span> Studies</p>
+          <h2 class="section__title" id="education-title">Education</h2>
+        </header>
+
+        <div class="school" data-reveal>
+          <img class="school__logo" src="assets/bcit.jpeg" width="225" height="224" alt="" loading="lazy" decoding="async" />
+          <div>
+            <h3 class="school__name">British Columbia Institute of Technology</h3>
+            <p class="school__program">Computer Systems Technology Diploma</p>
+            <ul class="school__facts">
+              <li>Term 3 of 4</li>
+              <li>GPA 92%</li>
+            </ul>
+            <p class="school__next">Continuing to a Bachelor's degree starting September 2027</p>
           </div>
         </div>
-      </div>
-    </div>
-    <!--End of Projects -->
+      </section>
 
-    <!-- Skills -->
-    <div id="skills-container">
-      <h3 class="skills-header">Skills</h3>
-      <div class="skills">
-        <div class="each-skill">
-          <img src="images/html.png" alt="HTML" />
-          <p>HTML</p>
-        </div>
-        <div class="each-skill">
-          <img src="images/css.jpg" alt="CSS" />
-          <p>CSS</p>
-        </div>
-        <div class="each-skill">
-          <img src="images/bootstrap.png" alt="bootstrap" />
-          <p>Bootstrap</p>
-        </div>
-        <div class="each-skill">
-          <img src="images/react.svg.png" alt="React" />
-          <p>React</p>
-        </div>
-        <div class="each-skill">
-          <img src="images/js.jpg" alt="JavaScript" />
-          <p>JavaScript</p>
-        </div>
-        <div class="each-skill">
-          <img src="images/node.png" alt="NodeJS" />
-          <p>NodeJS</p>
-        </div>
-        <div class="each-skill">
-          <img src="images/java.webp" alt="Java" />
-          <p>Java</p>
-        </div>
-        <div class="each-skill">
-          <img src="images/c.png" alt="C programming language" />
-          <p>C</p>
-        </div>
-        <div class="each-skill">
-          <img src="images/c++.png" alt="C++ programming language" />
-          <p>C++</p>
-        </div>
-        <div class="each-skill">
-          <img src="images/python.webp" alt="Python" />
-          <p>Python</p>
-        </div>
-        <div class="each-skill">
-          <img src="images/git.png" alt="Git" />
-          <p>Git</p>
-        </div>
-        <div class="each-skill">
-          <img src="images/github.svg" alt="GitHub" />
-          <p>GitHub</p>
-        </div>
-        <div class="each-skill">
-          <img src="images/mongoDB.png" alt="MongoDB" />
-          <p>MongoDB</p>
-        </div>
-        <div class="each-skill">
-          <img src="images/firebaselogo.png" alt="Firebase" />
-          <p>Firebase</p>
-        </div>
-        <div class="each-skill">
-          <img src="images/supabase.png" alt="Supabase" />
-          <p>Supabase</p>
-        </div>
-        <div class="each-skill">
-          <img src="images/render.png" alt="Render" />
-          <p>Render</p>
-        </div>
-        <div class="each-skill">
-          <img src="images/netlify.jpeg" alt="Netlify" />
-          <p>Netlify</p>
-        </div>
-      </div>
-    </div>
-    <!-- end of skills-->
+      <!-- ============ Skills ============ -->
+      <section class="section section--split container" id="skills" aria-labelledby="skills-title">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow"><span>04</span> Toolbox</p>
+          <h2 class="section__title" id="skills-title">Skills</h2>
+        </header>
 
-    <!-- experience -->
-    <div class="experience-container" id="experience">
-      <h3 class="experience-header">Experience</h3>
-      <div class="experience">
-        <div class="job hd">
-          <div class="job-title">
-            <img src="images/homedepot.png" alt="The Home Depot" />
-            <h4>The Home Depot</h4>
-            <p>July 2022 - Present</p>
+        <dl class="skills">
+          <div class="skills__group" data-reveal>
+            <dt>Languages</dt>
+            <dd><ul class="chips"><li>TypeScript</li><li>JavaScript</li><li>Java</li><li>SQL</li><li>Python</li><li>HTML/CSS</li><li>C/C++</li></ul></dd>
           </div>
-          <p class="job-description">
-            During my time as a Sales Associate at The Home Depot, I gained
-            valuable experience in a high-paced retail environment that demanded
-            strong communication and multitasking skills. I assisted a diverse
-            range of customers with product selection and technical inquiries,
-            which helped me develop the ability to explain complex information
-            clearly and confidently — a skill I now apply to team collaboration
-            and client communication in software development. I also learned to
-            handle feedback professionally and solve issues efficiently, even
-            during peak hours. Working with a large, cross-functional team
-            taught me how to thrive in a collaborative environment, where
-            adaptability and time management were essential. Balancing multiple
-            responsibilities while staying organized became second nature, and I
-            consistently delivered excellent service under pressure. These
-            real-world skills have translated well into my tech projects, where
-            clear communication, teamwork, and the ability to remain calm and
-            focused are just as important as writing clean code.
+          <div class="skills__group" data-reveal>
+            <dt>Frameworks</dt>
+            <dd><ul class="chips"><li>React</li><li>React Native</li><li>Node.js</li><li>Express.js</li></ul></dd>
+          </div>
+          <div class="skills__group" data-reveal>
+            <dt>AWS</dt>
+            <dd><ul class="chips"><li>Lambda</li><li>API Gateway</li><li>DynamoDB</li><li>Cognito</li><li>EventBridge</li><li>Bedrock</li><li>IAM</li></ul></dd>
+          </div>
+          <div class="skills__group" data-reveal>
+            <dt>Tools</dt>
+            <dd><ul class="chips"><li>Git</li><li>GitHub</li><li>Bitbucket</li><li>Postman</li></ul></dd>
+          </div>
+          <div class="skills__group" data-reveal>
+            <dt>Certification</dt>
+            <dd>
+              <ul class="chips">
+                <li class="chip--cert">
+                  <svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>
+                  AWS Certified Cloud Practitioner
+                </li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- ============ Contact ============ -->
+      <section class="contact container" id="contact" aria-labelledby="contact-title">
+        <div class="contact__inner" data-reveal>
+          <p class="eyebrow"><span>05</span> Contact</p>
+          <h2 class="contact__title" id="contact-title">Let's build something.</h2>
+          <p class="contact__lede">
+            Have a role, a project, or just a question? My inbox is always open.
           </p>
+          <div class="contact__email">
+            <a href="mailto:adamianarshia@gmail.com">adamianarshia@gmail.com</a>
+            <button class="copy" type="button" data-copy="adamianarshia@gmail.com">
+              <svg class="icon" aria-hidden="true"><use href="#i-copy" /></svg>
+              <span class="copy__label">Copy</span>
+            </button>
+            <span class="visually-hidden" role="status" aria-live="polite" data-copy-status></span>
+          </div>
+          <ul class="contact__links">
+            <li>
+              <a class="btn" href="https://github.com/arshiaadamian" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg>
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a class="btn" href="https://www.linkedin.com/in/arshia-adamian" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-linkedin" /></svg>
+                LinkedIn
+              </a>
+            </li>
+          </ul>
         </div>
 
-        <div class="job vv">
-          <div class="job-title">
-            <img src="images/valuevillage.jpeg" alt="Value Village" />
-            <h4>Value Village</h4>
-            <p>July 2020 - May 2022</p>
-          </div>
-          <p class="job-description">
-            During my time as a Sales Associate at Value Village, I worked in a
-            fast-paced, high-volume retail environment where accuracy and
-            attention to detail were essential. My main responsibilities
-            included sorting, tagging, and organizing inventory while
-            maintaining a clean and efficient workflow. I quickly adapted to
-            constant changes in inventory and team responsibilities, which
-            helped me develop flexibility and strong organizational skills that
-            I continue to apply in my technical projects today. I also
-            demonstrated initiative by identifying and improving workflow
-            inefficiencies, which contributed to smoother day-to-day operations.
-            Working directly with customers, I gained valuable problem-solving
-            experience by handling unique requests and resolving issues
-            independently. These experiences taught me how to think critically,
-            stay focused under pressure, and deliver consistent service — all
-            skills that continue to support my growth in both retail and tech
-            environments.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- end of experience -->
+        <!-- Group photo (trial): delete this figure to revert -->
+        <figure class="contact__photo" data-reveal style="--d: 1">
+          <img
+            src="assets/friends.jpg"
+            width="1400"
+            height="1050"
+            alt="Arshia smiling with three friends at a cafe"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+      </section>
+    </main>
 
-    <!-- education -->
-    <div class="education-container" id="education">
-      <h3 class="education-header">Education</h3>
-      <div class="education">
-        <div class="school bcit">
-          <div class="school-title">
-            <img src="images/bcit.jpeg" alt="BCIT" />
-            <div class="major-title">
-              <h4>British Columbia Institute of Technology</h4>
-              <h6>Computer Systems Technology (CST)</h6>
-            </div>
-            <p>Jan 2025 - Present</p>
-          </div>
-          <p class="school-description">
-            Currently pursuing a diploma in Computer Systems Technology at BCIT
-            with a <strong>91% CGPA</strong>. Gained a strong foundation in
-            object-oriented programming, hands-on experience in web development
-            using various frameworks, and completed multiple team projects
-            resulting in fully functional applications.
-          </p>
-        </div>
-        <div class="school bcit">
-          <div class="school-title">
-            <img src="images/sfu.png" alt="BCIT" />
-            <div class="major-title">
-              <h4>Simon Fraser University</h4>
-              <h6>Environmental Sciences</h6>
-            </div>
-            <p>September 2022 - August 2025</p>
-          </div>
-          <p class="school-description">
-            Developed strong analytical and research skills while working with
-            data and presenting findings. Also improved academic writing and
-            time management through coursework and projects.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- end of education -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-      <div class="container">
-        <h3 class="section-header">Get In Touch</h3>
-        <div class="contact-content">
-          <div class="contact-intro">
-            <p>
-              I'm always interested in new opportunities and collaborations.
-              Feel free to reach out!
-            </p>
-          </div>
-          <div class="contact-methods">
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class="contact-info">
-                <h4>Email</h4>
-                <a href="mailto:aadamian1@my.bcit.ca">aadamian1@my.bcit.ca</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-phone"></i>
-              </div>
-              <div class="contact-info">
-                <h4>Phone</h4>
-                <a href="tel:2368589008">(236) 858-9008</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fab fa-linkedin"></i>
-              </div>
-              <div class="contact-info">
-                <h4>LinkedIn</h4>
-                <a
-                  href="https://www.linkedin.com/in/arshia-adamian-b028731b2/"
-                  target="_blank"
-                  >Connect with me</a
-                >
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fab fa-github"></i>
-              </div>
-              <div class="contact-info">
-                <h4>GitHub</h4>
-                <a href="https://github.com/arshiaadamian" target="_blank"
-                  >View my repositories</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Contact Section -->
-
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="footer-content">
-        <div class="footer-links">
-          <a
-            href="https://github.com/arshiaadamian"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fab fa-github"></i> GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/arshia-adamian-b028731b2/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fab fa-linkedin"></i> LinkedIn
-          </a>
-          <a href="mailto:aadamian1@my.bcit.ca">
-            <i class="fas fa-envelope"></i> aadamian1@my.bcit.ca
-          </a>
-          <a href="tel:2368589008">
-            <i class="fas fa-phone"></i> (236) 858-9008
-          </a>
-        </div>
-        <div class="footer-copyright">
-          <p>&copy; Arshia Adamian. All rights reserved.</p>
-        </div>
-      </div>
+    <footer class="footer container">
+      <p>&copy; <span data-year>2026</span> Arshia Adamian</p>
+      <a href="#top">Back to top</a>
     </footer>
-
-    <!-- Bootstrap JS and dependencies -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
