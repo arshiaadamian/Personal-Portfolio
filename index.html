@@ -27,7 +27,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400..800&family=Geist+Mono:wght@400;500&display=swap"
     />
     <link rel="stylesheet" href="styles.css" />
     <script>document.documentElement.classList.add("js");</script>
@@ -74,6 +74,7 @@
           <li><a href="#skills">Skills</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+        <span class="nav__indicator" aria-hidden="true"></span>
       </nav>
     </header>
 
@@ -81,13 +82,16 @@
       <!-- ============ Hero ============ -->
       <section class="hero container" id="top" aria-labelledby="hero-title">
         <div class="hero__text">
-          <h1 class="hero__title" id="hero-title" data-reveal>
-            <span>Arshia Adamian</span>
-            <span class="hero__role">Software Developer</span>
+          <h1 class="hero__title" id="hero-title">
+            <span class="line"><span class="line__inner" style="--i: 0" data-weight>Arshia</span></span>
+            <span class="line"><span class="line__inner" style="--i: 1" data-weight>Adamian</span></span>
+            <span class="line hero__role"><span class="line__inner" style="--i: 2">Software Developer</span></span>
           </h1>
           <p class="hero__lede" data-reveal style="--d: 1">
-            I build and ship real products, from serverless AWS backends to iOS
-            apps and Chrome extensions.
+            I build and ship real products, from
+            <span class="mark" style="--i: 0">serverless AWS backends</span> to
+            <span class="mark" style="--i: 1">iOS apps</span> and
+            <span class="mark" style="--i: 2">Chrome extensions</span>.
           </p>
           <ul class="hero__links" data-reveal style="--d: 2">
             <li>
@@ -377,7 +381,7 @@
         <dl class="skills">
           <div class="skills__group" data-reveal>
             <dt>Languages</dt>
-            <dd><ul class="chips"><li>TypeScript</li><li>JavaScript</li><li>Java</li><li>SQL</li><li>Python</li><li>HTML/CSS</li><li>C/C++</li></ul></dd>
+            <dd><ul class="chips"><li>TypeScript</li><li>JavaScript</li><li>Java</li><li>SQL</li><li>Python</li><li>HTML/CSS</li><li>C/C++</li><li>Kotlin</li></ul></dd>
           </div>
           <div class="skills__group" data-reveal>
             <dt>Frameworks</dt>
@@ -385,7 +389,7 @@
           </div>
           <div class="skills__group" data-reveal>
             <dt>AWS</dt>
-            <dd><ul class="chips"><li>Lambda</li><li>API Gateway</li><li>DynamoDB</li><li>Cognito</li><li>EventBridge</li><li>Bedrock</li><li>IAM</li></ul></dd>
+            <dd><ul class="chips"><li>EC2</li><li>S3</li><li>Lambda</li><li>API Gateway</li><li>DynamoDB</li><li>Cognito</li><li>EventBridge</li><li>Bedrock</li><li>IAM</li></ul></dd>
           </div>
           <div class="skills__group" data-reveal>
             <dt>Tools</dt>
@@ -398,6 +402,9 @@
                 <li class="chip--cert">
                   <svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>
                   AWS Certified Cloud Practitioner
+                  <span class="sticker" aria-hidden="true">
+                    <img src="assets/aws-sticker.png" width="180" height="119" alt="" loading="lazy" decoding="async" />
+                  </span>
                 </li>
               </ul>
             </dd>
@@ -409,14 +416,14 @@
       <section class="contact container" id="contact" aria-labelledby="contact-title">
         <div class="contact__inner" data-reveal>
           <p class="eyebrow"><span>05</span> Contact</p>
-          <h2 class="contact__title" id="contact-title">Let's build something.</h2>
+          <h2 class="contact__title" id="contact-title"><span class="line"><span class="line__inner">Let's build something.</span></span></h2>
           <p class="contact__lede">
             Have a role, a project, or just a question? My inbox is always open.
           </p>
           <div class="contact__email">
             <a href="mailto:adamianarshia@gmail.com">adamianarshia@gmail.com</a>
             <button class="copy" type="button" data-copy="adamianarshia@gmail.com">
-              <svg class="icon" aria-hidden="true"><use href="#i-copy" /></svg>
+              <svg class="icon" aria-hidden="true"><use href="#i-copy" data-copy-icon /></svg>
               <span class="copy__label">Copy</span>
             </button>
             <span class="visually-hidden" role="status" aria-live="polite" data-copy-status></span>

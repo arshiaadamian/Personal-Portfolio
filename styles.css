@@ -16,6 +16,7 @@
 
   --live: #138a4a;
   --review: #a15c00;
+  --spot: rgba(255, 255, 255, 0.2);
 
   --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
@@ -44,6 +45,7 @@
 
     --live: #4ad48a;
     --review: #f0b357;
+    --spot: rgba(255, 255, 255, 0.07);
   }
 }
 
@@ -225,15 +227,27 @@ a[href=""] {
   color: var(--text);
 }
 
-.nav__links a[aria-current="true"]::after {
-  content: "";
+.nav {
+  position: relative;
+}
+
+.nav__indicator {
   position: absolute;
+  top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 0;
   height: 1.5px;
-  background: currentColor;
   border-radius: 2px;
+  background: var(--text);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav__indicator.is-ready {
+  transition:
+    transform 0.5s var(--ease),
+    width 0.5s var(--ease),
+    opacity 0.3s var(--ease);
 }
 
 @media (max-width: 560px) {
@@ -258,7 +272,11 @@ a[href=""] {
   font-size: 0.95rem;
   font-weight: 500;
   white-space: nowrap;
-  transition: transform 0.2s var(--ease), border-color 0.2s var(--ease), background-color 0.2s var(--ease);
+  transition:
+    transform 0.2s var(--ease),
+    translate 0.35s var(--ease),
+    border-color 0.2s var(--ease),
+    background-color 0.2s var(--ease);
 }
 
 @media (hover: hover) {
@@ -305,6 +323,39 @@ a[href=""] {
 .hero__role {
   color: var(--muted);
   font-weight: 500;
+}
+
+/* A line of large type that can slide up through its own clipping mask */
+.line {
+  display: block;
+  overflow-x: visible;
+  overflow-y: clip;
+  padding-block: 0.08em 0.14em;
+  margin-block: -0.08em -0.14em;
+}
+
+.line__inner {
+  display: block;
+}
+
+/* Letters of big headings, built by main.js; each keeps its weight-600 width.
+   Words stay unbreakable so titles only wrap between words. */
+.word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.ltr {
+  display: inline-block;
+  text-align: center;
+  white-space: pre;
+  transition: font-weight 0.4s var(--ease);
+}
+
+.mark {
+  color: var(--text);
+  background: linear-gradient(var(--accent), var(--accent)) 0 100% / 100% 1.5px no-repeat;
+  padding-bottom: 1px;
 }
 
 .hero__lede {
@@ -384,7 +435,7 @@ a[href=""] {
   color: var(--muted);
 }
 
-.eyebrow span {
+.eyebrow span:first-child {
   color: var(--accent);
 }
 
@@ -432,6 +483,7 @@ a[href=""] {
 }
 
 .project {
+  position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -448,6 +500,22 @@ a[href=""] {
     box-shadow: var(--shadow-hover);
     border-color: var(--line-strong);
   }
+}
+
+.project::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  border-radius: inherit;
+  background: radial-gradient(520px circle at var(--mx, 50%) var(--my, 50%), var(--spot), transparent 45%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease);
+}
+
+.project.is-tilting::after {
+  opacity: 1;
 }
 
 .project__body {
@@ -530,6 +598,10 @@ a[href=""] {
 
 .badge[data-status="live"]::before {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--live) 22%, transparent);
+}
+
+.badge[data-status="live"] {
+  position: relative;
 }
 
 .badge[data-status="review"] {
@@ -1035,10 +1107,70 @@ a[href=""] {
 }
 
 .chips .chip--cert {
+  position: relative;
   border-color: transparent;
   background: var(--accent-soft);
   color: var(--accent);
   font-weight: 500;
+}
+
+/* AWS sticker hanging from the certification chip on a thin string */
+.sticker {
+  position: absolute;
+  top: calc(100% - 3px);
+  right: 26px;
+  width: 72px;
+  transform-origin: 50% 0;
+  rotate: -5deg;
+  pointer-events: none;
+}
+
+.sticker::before {
+  content: "";
+  display: block;
+  width: 1.5px;
+  height: 14px;
+  margin-inline: auto;
+  border-radius: 1px;
+  background: var(--line-strong);
+}
+
+.sticker img {
+  width: 100%;
+  margin-top: -2px;
+  filter: drop-shadow(0 6px 8px rgba(17, 17, 19, 0.18));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sticker.is-swinging {
+    animation: swing 1.8s cubic-bezier(0.36, 0, 0.3, 1);
+  }
+}
+
+@keyframes swing {
+  0% {
+    rotate: -5deg;
+  }
+
+  18% {
+    rotate: 7deg;
+  }
+
+  38% {
+    rotate: -12deg;
+  }
+
+  58% {
+    rotate: 1deg;
+  }
+
+  78% {
+    rotate: -8deg;
+  }
+
+  100% {
+    rotate: -5deg;
+  }
 }
 
 @media (max-width: 560px) {
@@ -1234,10 +1366,6 @@ a[href=""] {
     padding-block: 12px;
   }
 
-  .nav__links a[aria-current="true"]::after {
-    bottom: 6px;
-  }
-
   .hero__links,
   .contact__links {
     display: grid;
@@ -1252,6 +1380,11 @@ a[href=""] {
 
   .project__body {
     padding: 22px 20px 24px;
+  }
+
+  /* Room for the hanging AWS sticker above the section edge */
+  .skills__group:has(.sticker) {
+    padding-bottom: 56px;
   }
 }
 
@@ -1274,6 +1407,7 @@ a[href=""] {
    Motion
    ========================================================================== */
 @media (prefers-reduced-motion: no-preference) {
+  /* ---- Scroll reveal ---- */
   .js [data-reveal] {
     opacity: 0;
     transform: translateY(16px);
@@ -1289,11 +1423,198 @@ a[href=""] {
     transform: none;
   }
 
+  /* ---- Hero load-in: title lines rise through their masks ---- */
+  .js .hero__title .line__inner {
+    animation: rise 1.1s var(--ease) both;
+    animation-delay: calc(var(--i, 0) * 90ms + 120ms);
+  }
+
+  .js .hero__portrait img {
+    animation: settle 1.6s var(--ease) 0.1s both;
+  }
+
+  .js .mark {
+    animation: draw 0.9s var(--ease) both;
+    animation-delay: calc(var(--i, 0) * 160ms + 1s);
+  }
+
+  /* Contact title rises when its block scrolls in */
+  .js .contact__title .line__inner {
+    transform: translateY(105%);
+    transition: transform 1.1s var(--ease) 0.15s;
+  }
+
+  .js .is-in .contact__title .line__inner {
+    transform: none;
+  }
+
+  /* ---- Project cards: tilt toward the cursor (vars set by main.js) ---- */
   @media (hover: hover) {
     .js .project[data-reveal].is-in:hover {
-      transform: translateY(-4px);
-      transition-delay: 0s;
+      transform: perspective(1400px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-4px);
+      transition:
+        opacity 0.8s var(--ease),
+        transform 0.25s ease-out,
+        box-shadow 0.45s var(--ease),
+        border-color 0.45s var(--ease);
     }
+  }
+
+  /* ---- Phones start stacked and fan out as the card arrives ---- */
+  .js .project.is-in .phones img:nth-child(1) {
+    animation: fan-left 1.2s var(--ease) 0.35s backwards;
+  }
+
+  .js .project.is-in .phones img:nth-child(2) {
+    animation: fan-center 1.2s var(--ease) 0.35s backwards;
+  }
+
+  .js .project.is-in .phones img:nth-child(3) {
+    animation: fan-right 1.2s var(--ease) 0.35s backwards;
+  }
+
+  /* Daisy peeks up from behind the edge once the phones settle */
+  .js .project.is-in .daisy {
+    animation: peek 0.9s cubic-bezier(0.34, 1.5, 0.64, 1) 1.1s backwards;
+  }
+
+  /* ---- "Live" status light ---- */
+  .badge[data-status="live"]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    margin-top: -3.5px;
+    border-radius: 50%;
+    background: currentColor;
+    animation: ping 2.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+    pointer-events: none;
+  }
+
+  /* ---- Copy button confirmation ---- */
+  .copy.is-copied .icon {
+    animation: pop 0.45s cubic-bezier(0.34, 1.6, 0.64, 1);
+  }
+
+  .copy.is-copied {
+    color: var(--live);
+    border-color: currentColor;
+  }
+
+  /* ---- Depth: screenshots drift slightly slower than their card ---- */
+  @supports (animation-timeline: view()) {
+    .stage .phones,
+    .stage__window,
+    .stage__phone {
+      animation: drift linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+    }
+  }
+
+  /* ---- Reading progress along the header's bottom edge ---- */
+  @supports (animation-timeline: scroll()) {
+    .site-header::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      animation: progress linear both;
+      animation-timeline: scroll(root);
+    }
+  }
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(105%);
+  }
+}
+
+@keyframes settle {
+  from {
+    scale: 1.12;
+    opacity: 0;
+  }
+}
+
+@keyframes draw {
+  from {
+    background-size: 0 1.5px;
+  }
+}
+
+@keyframes fan-left {
+  from {
+    transform: translateX(100%) rotate(0deg) translateY(16px);
+  }
+}
+
+@keyframes fan-center {
+  from {
+    transform: translateY(14px) scale(0.98);
+  }
+}
+
+@keyframes fan-right {
+  from {
+    transform: translateX(-100%) rotate(0deg) translateY(16px);
+  }
+}
+
+@keyframes drift {
+  from {
+    translate: 0 18px;
+  }
+
+  to {
+    translate: 0 -18px;
+  }
+}
+
+@keyframes peek {
+  from {
+    transform: translateY(105%);
+  }
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+
+  75%,
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+@keyframes pop {
+  0% {
+    scale: 0.6;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
   }
 }
 
